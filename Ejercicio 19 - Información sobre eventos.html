@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)https://www.arkaitzgarro.com/javascript/snippets/cap18/ej19.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Ejercicio 19 - Información sobre eventos</title>
+
+    <style type="text/css">
+        body {font-family: arial, helvetica;}
+        .box {width:160px; height: 160px; border:thin solid silver; padding:.5em; float: left; margin-right: 15px;}
+        .box h1 {margin: 0;}
+    </style>
+
+    <script type="text/javascript">
+        function tamanoVentanaNavegador(){
+            // Adaptada de http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
+            var dimensiones = [];
+            
+            if(typeof(window.innerWidth) == 'number') {
+                // No es IE
+                dimensiones = [window.innerWidth, window.innerHeight];
+            } else if(document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+                //IE 6 en modo estandar (no quirks)
+                dimensiones = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+            } else if(document.body && (document.body.clientWidth || document.body.clientHeight)) {
+                //IE en modo quirks
+                dimensiones = [document.body.clientWidth, document.body.clientHeight];
+            }
+            
+            return dimensiones;
+        }
+    </script>
+</head>
+
+<form id="miFormulario">
+    <textarea id="mensaje" rows="4" cols="50" maxlength="100"></textarea>
+    <div id="contador">Caracteres restantes: 100</div>
+</form>
+
+
+<body>
+    <div class="box">
+        <h1>Posición</h1>
+        <span class="posicion"></span>
+    </div>
+    <script type="text/javascript" src="ejercicio19.js"></script>
+
+</body></html>
